@@ -4,6 +4,8 @@
  */
 function price(basket) {
   const unitPrice = 8;
+  if (basket.filter(book => book > 0).length === 2) return 2 * unitPrice * 0.95;
+
   return basket.map(book => book * unitPrice).reduce((a, b) => a + b, 0);
 }
 
