@@ -4,6 +4,7 @@
  */
 function price(basket) {
   if (basket.every(book => book === 0)) return 0;
+  return 8;
 }
 
 describe("Potter tests", () => {
@@ -14,7 +15,7 @@ describe("Potter tests", () => {
   );
 
   [[1], [0, 1], [0, 0, 1, 0, 0]].forEach(basket =>
-    it("should be 8€ when there's exactly 1 book copy", () => {
+    it("should be 8€ when basket has exactly 1 book copy", () => {
       expect(price(basket)).toBe(8);
     })
   );
