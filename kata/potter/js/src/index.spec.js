@@ -20,4 +20,10 @@ describe("Potter tests", () => {
       expect(price(basket)).toBe(8);
     })
   );
+
+  [[4], [0, 4], [0, 0, 4, 0, 0]].forEach(basket =>
+    it("should sum unit price for the same book copies", () => {
+      expect(price(basket)).toBe(32);
+    })
+  );
 });
