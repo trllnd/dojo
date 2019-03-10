@@ -4,7 +4,7 @@
  */
 function price(basket) {
   if (basket.every(book => book === 0)) return 0;
-  return 8;
+  if (basket.filter(book => book === 1).length === 1) return 8;
 }
 
 describe("Potter tests", () => {
