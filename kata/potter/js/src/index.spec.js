@@ -3,7 +3,7 @@
  * @return {number} the price of any conceivable shopping basket, giving as big a discount as possible
  */
 function price(basket) {
-  return 0;
+  if (basket.every(book => book === 0)) return 0;
 }
 
 describe("Potter tests", () => {
