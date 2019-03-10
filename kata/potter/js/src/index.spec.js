@@ -2,7 +2,9 @@
  * @param {number[]} basket
  * @return {number} the price of any conceivable shopping basket, giving as big a discount as possible
  */
-function price(basket) {}
+function price(basket) {
+  return 0;
+}
 
 describe("Potter tests", () => {
   [[], [0], [0, 0, 0, 0, 0]].forEach(basket =>
