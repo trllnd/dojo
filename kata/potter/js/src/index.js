@@ -8,8 +8,13 @@ module.exports = function price(basket) {
   const differentCopies = basket.filter(book => book > 0).length;
 
   if (differentCopies === 2) {
-    const aaa = basket.reduce((a, b) => Math.max(a, b));
-    return aaa * differentCopies * unitPrice * 0.95;
+    const nbSeries = basket.reduce((a, b) => Math.max(a, b));
+    return nbSeries * differentCopies * unitPrice * 0.95;
+  }
+
+  if (differentCopies === 3) {
+    const nbSeries = basket.reduce((a, b) => Math.max(a, b));
+    return nbSeries * differentCopies * unitPrice * 0.9;
   }
 
   return basket.map(book => book * unitPrice).reduce((a, b) => a + b, 0);
