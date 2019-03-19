@@ -15,4 +15,8 @@ describe("Potter tests", () => {
   it("should sum 2-series discounted price", () => {
     expect(price([0, 2, 0, 2, 0])).toBe(32 * 0.95);
   });
+
+  it("should sum 3-series discounted price", () => {
+    expect(price([0, 2, 2, 2, 0])).toBe(2 * 3 * 8 * 0.9);
+  });
 });
