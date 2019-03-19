@@ -5,16 +5,16 @@
 module.exports = function price(basket) {
   var unitPrice = 8;
 
+  var discount = {
+    2: 0.95,
+    3: 0.9
+  };
+
   const differentCopies = basket.filter(book => book > 0).length;
 
-  if (differentCopies === 2) {
+  if (differentCopies > 1) {
     const nbSeries = basket.reduce((a, b) => Math.max(a, b));
-    return nbSeries * differentCopies * unitPrice * 0.95;
-  }
-
-  if (differentCopies === 3) {
-    const nbSeries = basket.reduce((a, b) => Math.max(a, b));
-    return nbSeries * differentCopies * unitPrice * 0.9;
+    return nbSeries * differentCopies * unitPrice * discount[differentCopies];
   }
 
   return basket.map(book => book * unitPrice).reduce((a, b) => a + b, 0);
