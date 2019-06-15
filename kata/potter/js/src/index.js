@@ -4,7 +4,6 @@
  */
 module.exports = function price(basket) {
   var unitPrice = 8;
-
   var discount = {
     2: 0.95,
     3: 0.9
